@@ -1,6 +1,6 @@
 package com.coderscampus.arraylist;
 
-public class Main {
+public class CustomListApplication {
     public static void main(String[] args) {
         CustomArrayList<String> names = new CustomArrayList<>();
 
