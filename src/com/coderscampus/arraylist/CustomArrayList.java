@@ -1,22 +1,22 @@
 package com.coderscampus.arraylist;
 
+import java.util.Arrays;
+
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
 	int size = 0;
-	@Override
 	public boolean add(T item) {
-		if(size == items.length){
-			items = returnArray();
+		if (size == items.length) {
+			items = Arrays.copyOf(items, items.length * 2);
 		}
-		items[size] = item;
-		size++;
-		return false;
+		items[size++] = item;
+		return true; // Indicate the item was added successfully
 	}
 
 	public Object[] returnArray() {
 		Object[] newArray = new Object[items.length*2];
 		System.arraycopy(items,0,newArray,0,items.length);
-		return newArray;
+		return newArray ;
 	}
 
 	@Override
